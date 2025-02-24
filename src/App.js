@@ -6,8 +6,8 @@ import ArduinoSimulator from "./ArduinoSimulator";
 import ImgGetter from "./imggetter";
 import "./App.css";
 
-import logo from "./assests/logo.png";  // ✅ Add your logo
-import bgImage from "./assests/bg.jpeg"; // ✅ Background image
+import logo from "./assests/logo.png";
+import bgImage from "./assests/bg.jpeg";
 
 function Home() {
   return (
