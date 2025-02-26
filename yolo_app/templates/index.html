@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Parts Detection</title>
+    <script>
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function () {
+                const imgElement = document.getElementById('preview');
+                imgElement.src = reader.result;
+                imgElement.style.display = 'block';
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+        
+        async function detectObjects() {
+            const imgElement = document.getElementById('preview');
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = imgElement.width;
+            canvas.height = imgElement.height;
+            ctx.drawImage(imgElement, 0, 0, imgElement.width, imgElement.height);
+
+            const imageData = imgElement.src;
+            const response = await fetch('/detect', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ image: imageData })
+            });
+            const xsc = imgElement.width / 640
+            const ysc = imgElement.height / 640
+            const data = await response.json();
+            drawDetections(data.detections, ctx,xsc,ysc);
+        }
+
+        function drawDetections(detections, ctx,xsc,ysc) {
+            ctx.strokeStyle = 'white';
+            ctx.lineWidth = 4;
+            ctx.font = '30px Arial';
+            ctx.fillStyle = 'white';
+            
+            detections.forEach(det => {
+                const [x1_1, y1_1, x2_2, y2_2] = det.bbox;
+                const [x1,y1,y2,x2] =  [x1_1 * xsc,y1_1 * ysc,(y2_2 - y1_1) * ysc, (x2_2-x1_1)*xsc]
+                ctx.strokeRect(x1, y1, x2, y2 );
+                ctx.fillText(`${det.class} (${(det.confidence * 100).toFixed(1)}%)`, x1, y1 - 5);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h2>Upload an Image for Object Parts Detection</h2>
+    <input type="file" accept="image/*" onchange="previewImage(event)">
+    <br><br>
+    <img id="preview" style="max-width: 100%; display: none;" />
+    <br><br>
+    <button onclick="detectObjects()">Detect Objects</button>
+    <br><br>
+    <canvas id="canvas" style="max-width: 100%;"></canvas>
+</body>
+</html>
