@@ -1,0 +1,13 @@
+Requires mySQL to be installed with:
+host: "localhost",
+user: "root",
+password: "1234",  // Change this to your MySQL password
+database: "envirai"
+
+cd src 
+python CompIdentifier.py
+python imageentry.py
+python alchemy.py
+python ProjectIdeas.py
+node server.js
+npm start 
