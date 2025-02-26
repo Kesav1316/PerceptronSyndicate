@@ -1,0 +1,24 @@
+.idea-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .idea-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .idea-description {
+    display: none;
+    color: #666;
+  }
+  
+  .idea-description.show {
+    display: block;
+    margin-top: 10px;
+  }
+  

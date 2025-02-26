@@ -1,0 +1,58 @@
+/* PhysiCardBattle.css */
+.physi-card-container {
+    text-align: center;
+    padding: 40px;
+    background-color: #1e1e1e;
+    color: white;
+    min-height: 100vh;
+  }
+  
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .card {
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.5);
+  }
+  
+  .battle-result {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+  
+  .result-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ffcc00;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .back-button:hover {
+    background: #e6b800;
+  }
