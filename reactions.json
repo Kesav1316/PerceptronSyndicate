@@ -1,0 +1,70 @@
+{
+  "reactions": {
+    " Silicon+Oxygen": [
+      "Silicon dioxide"
+    ],
+    " Copper+ Gold+ Tin": [
+      "no"
+    ],
+    " Manganese+ Oxygen+Potassium": [
+      "Potassium manganate(VII)",
+      "Potassium manganate(VI)"
+    ],
+    "  Carbon+ Oxygen": [
+      "Carbon dioxide"
+    ],
+    " Oxygen+ Silver": [
+      "Silver oxide"
+    ],
+    " Manganese+ Oxygen": [
+      "Manganese(II) oxide"
+    ],
+    "Nitrogen+Phosphorus": [
+      "no"
+    ],
+    "Chlorine+Copper": [
+      "Copper(II) chloride"
+    ],
+    "Bromine+Chlorine": [
+      "no"
+    ],
+    "Hydrogen+Nitrogen": [
+      "Ammonia"
+    ],
+    "Manganese+Oxygen": [
+      "Manganese(II) oxide"
+    ],
+    "manganese+oxygen": [
+      "manganese(II) oxide",
+      "manganese(III) oxide",
+      "manganese(IV) oxide"
+    ],
+    "Potassium+manganese": [
+      "No"
+    ],
+    "Potassium+manganese+oxygen": [
+      "Potassium manganate(VII)",
+      "Potassium oxide",
+      "Manganese dioxide"
+    ],
+    "Manganese+Potassium": [
+      "no"
+    ],
+    "Oxygen+Potassium": [
+      "Potassium oxide"
+    ]
+  },
+  "elements": {
+    "Oxygen": "Oxygen",
+    " Silicon": " Silicon",
+    " Carbon": " Carbon",
+    " Hydrogen": " Hydrogen",
+    " Nitrogen": " Nitrogen",
+    " Copper": " Copper",
+    " Tin": " Tin",
+    " Gold": " Gold",
+    " Nickel": " Nickel",
+    "  Silver": "  Silver",
+    "  Iron.": "  Iron."
+  }
+}
